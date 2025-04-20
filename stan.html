@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bnt-center{
+            position: relative0;
+            left: 50%;
+            right: 50%;
+        }
+        .box-container{
+            display: flex;
+            justify-content: space-around;
+        }
+        .box{
+            width: 10%;
+            height: 100px;
+            border: 6px solid #e0d9d9;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            color: #e0d9d9;
+            background-color: #0c2e2e;
+        }
+        .box{
+        
+            width: 20%;
+            height: 90%;
+            border: 3px solid #f7f6f8;
+            border-radius: 30px;
+            display:inline;
+            justify-content: center;
+            align-items:center;
+            color: #e0d9d9;
+            background-color:#4d076d;
+        }
+        .numberinput{
+        
+            width: 100px;
+            height: 80px;
+            border: 3px solid #ccc;
+            background-color: #4d076d;
+            border-radius: 50px;
+            display:block;
+            text-align: center;
+            font-size: 24px;
+
+        }
+        .squircle {
+            width: 600px;
+            height: 500px;
+            display:block;
+            background-color: #4d076d;
+            border-radius: 25%;
+            border: 3px solid #ccc;
+        
+
+        }
+        .vertical-line {
+            height: 110px;
+            width: 3px;
+            background-color: #f7f6f8;
+        }
+        .horizntal-line {
+            height: 3px;
+            width: 150px;
+            background-color: #ccc;
+        }
+        .deposit-button {
+            background-color:  #4d076d;
+            color: #ccc;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 9px;
+            cursor: pointer;
+            font-size: 19px;
+        }
+        .deposit-button.active {
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+            border:1px solid rgba(76, 175, 80, 1);
+        }
+        .no-underline{
+            text-decoration: none;
+        }
+     
+        
+    </style>
+</head>
+<body style="background: linear-gradient(to right, #4d076d, #ff00d4);"> 
+    <p style="font-size: 70px;text-align: center;color: #ecfa28;">777 JACKPOT</p>                                   
+    <div class="box-container" >
+        <div class="box">
+            <label style="text-align: center;display: block ;color: rgba(247, 246, 246, 0.986);padding: 10x 10x;border-radius: 30px;font-size: 90px;" id = "Ylabel"></label>
+        </div>
+    <button style="position: absolute;top: 60%;left: 50%;transform: translate(-50%,-50%);  background-color: #2214e7;color: #ccc; padding: 10px 20px; border-radius: 30px; cursor: pointer;font-size: 50px;text-align: center;" id="roolbutton">BET</div>
+    </div>
+    <button  style=" position: absolute ;top: 40%;left:55%;transform:translate(-50%,-50%);" c class="deposit-button" onclick="this.classlist.toggle('active')" id="deposit"><a style="color: #ccc;" href="" class="no-underline">50></a></button>
+    <button  style=" position: absolute ;top: 40%;left:45%;transform:translate(-50%,-50%);" c class="deposit-button" id="deposit"><a style="color: #ccc;" href="" class="no-underline">50<</a></button>
+    <div style=" text-align: center; position: absolute;top: 60%;left: 50%;transform:translate(-50%,-50%) ;color: aliceblue;font-size: 30px;" id="timer">WAIT FOR</div>
+    <div  style="position: absolute;top: 100%;left: 50%;transform: translate(-50%,-50%) ; background: linear-gradient(to right,#38a2d7, #4d076d)" class="squircle"></div>
+    <div style=" color:  #ccc;position: absolute;top: 86%;left: 50%;transform: translate(-50%,-50%)"  class="vertical-line"></div>
+    <div style=" color:  #ccc;position: absolute;top: 91.6%;left: 50%;transform: translate(-50%,-50%)"  class="horizntal-line"></div>
+    <button  style=" position: absolute ;top: 80%;left: 43%;transform:translate(-50%,-50%);" c class="deposit-button" id="deposit"><a style="color: #ccc;" href="deposit.html" class="no-underline">Deposit</a></button>
+
+    <button  style=" position: absolute ;top: 80%;left: 57%;transform:translate(-50%,-50%)"  class="deposit-button">Withdraw</button>
+    <h1 style="font-size: 20px; color:#ecfa28; position: absolute;top: 90%;left: 43%;transform:translate(-50%,-50%)">BALANCE</h1>
+    <h1 style="font-size: 20px; color:#ecfa28; position: absolute;top: 90%;left: 57%;transform:translate(-50%,-50%)">WINS</h1>
+    <h1 style="font-size: 30px; color:#feffff; position: absolute;top: 84%;left: 43%;transform:translate(-50%,-50%)">NGN.0.00</h1>
+    <h1 style="font-size: 30px; color:#fafdfd; position: absolute;top: 84%;left: 57%;transform:translate(-50%,-50%)">NGN.0.00</h1>
+    <h1 style="font-size: 10px;font-family: Arial, Helvetica, sans-serif; color:#62cff0; position: absolute;top: 93%;left: 50%;transform:translate(-50%,-50%)">CHAMP</h1>
+    <h1 style="font-size: 20px; color:#ecfa28; position: absolute;top: 95%;left: 50%;transform:translate(-50%,-50%)">:USERNAME</h1>
+    <input type="number"  placeholder="Amount to Stake With"  id="amount" class="numberinput" step="1" style=" width: 300px; color: #ccc; position: absolute;top: 50%;left: 50%;transform:translate(-50%,-50%) ">
+    
+
+
+    
+    
+
+    <script>
+        var T;
+        var Y;
+        var A;
+        var R;
+
+document.getElementById("roolbutton"); onclick = function at (){
+     Y = Math.floor(Math.random() * 100) + 2;
+     this.document.getElementById("Ylabel").innerHTML = Y;
+  
+     
+}
+    </script>
+    <script>
+        var countdown= 10;
+        function startcountdown(){
+            document.getElementById('timer')
+            .textContent=countdown;
+            countdown--;
+            if (countdown<0){
+                countdown=10;
+            }
+            setTimeout(startcountdown,1000);
+        }
+        
+        startcountdown();
+    </script> 
+    <img style="position: absolute;top: 5%;left: 50%;transform: translate(-50%,-50%) " src="file:///C:/Users/user/Desktop/yyyyy/.vscode/images/777jackiecha.png" alt="">
+
+</body>
+</html>

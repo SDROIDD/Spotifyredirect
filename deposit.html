@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .deposit-button {
+            background: linear-gradient(to right,#38a2d7, #4d076d);
+            color: #ccc;
+            padding: 10px 20px;
+            border: 2px solid #ccc;
+            border-color: #ccc;
+            border-radius: 9px;
+            cursor: pointer;
+            font-size: 19px;
+        }
+        .numberinput{
+        
+            width: 100px;
+            height: 80px;
+            border: 3px solid #ccc;
+            background-color: #4d076d;
+            border-radius: 50px;
+            display:block;
+            text-align: center;
+            font-size: 24px;
+
+        }
+        .no-underline{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body style="background: linear-gradient(to right, #4d076d, #ff00d4);">
+    <button  style=" position: absolute ;top: 3%;left: 2.5%;transform:translate(-50%,-50%);" c class="deposit-button" id="deposit"><a style="color: #ccc;" href="stan.html" class="no-underline" >Back</a></button>
+    <input type="number"  id="amount" class="numberinput"
+    placeholder="minimum deposit #100" min="0" max="100" step="1" style=" width: 300px; color: #ccc; position: absolute;top: 40%;left: 50%;transform:translate(-50%,-50%) ">
+    <h1 style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; color:#fafaf9; position: absolute;top: 32%;left: 45%;transform:translate(-50%,-50%)">AMOUNT</h1>
+    <button  style=" position: absolute ;top: 70%;left:50%;transform:translate(-50%,-50%);" c class="deposit-button" id="deposit"><a style="color: #ccc;" href="deposit.html" class="no-underline" onclick="depositmoney()">Proceed</a></button>
+    <script>
+        function depositmoney() {
+            const amount = 
+        document.getElementById('amount').value;
+            if (amount > 0) {
+                const express = 
+                require ('express');
+                const app = express();
+                app.use(express.json());
+
+                var balance = 0
+
+                app.post('/deposit',(req , resp)=> {
+                    const { amount } = req.body;
+                    balance += amount;
+                    res.json( { message: `Deposit successful.New balance: # {balance}` });
+                });
+                app.listen(3000, () => {
+                    console.log('server running on port 3000');
+                });
+                const flutterwave = new Flutterwave(public_key, secret_key);
+
+                const payload = {
+                     tx_ref: txRef,
+                     amount: amount,
+                     currency: 'NGN',
+                     payment_type: 'bank_transfer',
+                     bank_transfer: {
+                        bank_code: bankCode, // Get the bank code from Flutterwave's documentation
+                     },
+                    customer: {
+                        email: customerEmail,
+                    },
+                    redirect_url:"https://sandbox.flutterwave.com/pay/henwhay6efbp" ,
+                }
+                flutterwave.Charge(payload)
+                    .then(response => {
+                      // Handle response
+                    })
+                .catch(error => {
+                      // Handle error
+                    });
+
+
+                // call backend api to process the deposit
+                fetch('/deposit',{
+                    method: 'POST',
+                    header: {  'content-Type': 
+        'application/json'},
+                    body: 
+        JSON.stringify({ amount: 
+        parseFloat(amount) }),
+                })
+                .then(response=>
+        response.json())
+                .then(data => 
+        console.log(data))
+                .catch(error =>
+        console.error('error:',error));
+            }  else {
+                alert('invalid deposit amount');
+            }
+        } 
+    </script>
+</body>
+</html>
