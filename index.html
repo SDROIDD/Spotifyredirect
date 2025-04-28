@@ -38,6 +38,18 @@
             transition: all .55s ease;
             
         }
+        .navlist button{
+            background-color: transparent;
+            border: none;
+
+            
+
+        }
+        .navlistbut{
+            display: none;
+            cursor: pointer;
+            
+        }
         .header h1 {
             position: absolute;top: 7%;left: 13%;transform: translate(-50%,-50%) ; 
             font-size: 30px; 
@@ -112,11 +124,12 @@
             font-weight: bolder;
         }
         .menu{
-            color: #fcf8f8;
+            color: #f8fcf9fa;
+            font-weight: bold;
             font-size: 30px;
             cursor: pointer;
             font-family:Lucida Sans, 'Lucida Sans Regular';
-            position: absolute;top: 1%; left: 85%;transform: translate(-50%,-50%);
+            position: absolute;top: 18%; left: 85%;transform: translate(-50%,-50%);
             display: none;
         }
         .hero img {
@@ -168,7 +181,7 @@
             max-width: 800px;
         }
         .cta {
-            position: absolute;top: 160%;left: 50%;transform: translate(-50%,-50%)
+            position: absolute;top: 170%;left: 50%;transform: translate(-50%,-50%)
         }
         .cta h2 {
             font-size: 4rem;
@@ -203,7 +216,7 @@
             padding: 20px;
             font-size: 0.8rem;
             color: #c4c5c5;
-            position: absolute;top:190%;left: 50%;transform: translate(-50%,-50%)
+            position: absolute;top:210%;left: 50%;transform: translate(-50%,-50%)
         }
         /*res*/
         @media (max-width: 768px) {
@@ -245,21 +258,24 @@
             }
             .navlist{
                 position: absolute;
-                top: 25%;
-                right: 0%;
-                width: 300px;
+                top: 20%;
+                right: 90%;
+                width: 200px;
                 height: 40vh;
                 background: #631463;
                 display: flex;
-                align-items:center;
+                align-items: center;
                 flex-direction: column;
-                padding: 50px 20px;
+                padding: 30px 20px;
                 transition: all .100s ease;
                 z-index: 1;
-                border-radius: 20%;
+                border-radius: 10%;
                 opacity: 0.8;
                 
                 
+            }
+            .navlistbut{
+                display: block;
             }
             .navlist .display{
                 display: none;
@@ -292,6 +308,7 @@
                 height: auto;
                 padding-right: 50%;
                 padding-top: 10%;
+                
             }
             .hero h1 {
                 font-size: 3.5rem;
@@ -317,7 +334,7 @@
 
             .cta h2 {
 
-                font-size: 1.2rem;
+                font-size: 2rem;
                 margin: 0 0 20px;
                 padding-top: 90%;
                 
@@ -325,11 +342,117 @@
             
 
             .cta p {
-                font-size: 0.8rem;
+                font-size: 1rem;
                 
             }
             .cta.signup{
                 margin: 40% 10%;
+            
+            }
+        }
+        @media (max-width: 375px){
+            .menu{
+                display: block;
+            }
+            .navlist{
+                position: absolute;
+                top: 25%;
+                right: 0%;
+                width: 200px;
+                height: 40vh;
+                background: #631463;
+                display: flex;
+                align-items:center;
+                flex-direction: column;
+                padding: 50px 20px;
+                transition: all .100s ease;
+                z-index: 1;
+                border-radius: 10%;
+                opacity: 0.8;
+                
+                
+            }
+            .navlist .display{
+                display: none;
+                position: absolute;
+                padding-top: 20%;
+            }
+            .navlist a{
+                display: block;
+                margin-left: 0;
+                margin: 10px 0;
+            }
+            .feature {
+                background-color: #4d076d;
+                border: 3px solid #ccc;
+                border-radius: 50%; /* Make the boxes circular */
+                padding: 20px;
+                text-align: center;
+                width: 100px; /* Set width and height to make them circular */
+                height: 100px;
+            }
+            .header ul {
+                font-size: 0.5rem;
+            }
+            .header h1 {
+                font-size: 1.3rem;
+                padding-left: 60%;
+            }
+            .header img {
+                padding-left:13%;
+            }
+            .login{
+                position: relative;
+                top: auto;
+                left: auto;
+                margin: -5px auto;
+                transform:translate(-50%,-50%)
+            }
+
+            .hero img {
+                width: 80%;
+                height: auto;
+                padding-right: 50%;
+                padding-top: 5%;
+            }
+            .hero h1 {
+                font-size: 3rem;
+                padding-bottom: 45%;
+                padding-left: 20%;
+            }
+
+            .hero p {
+                font-size: 2.5rem;
+                padding-bottom: 43%;
+                padding-left: 22%;
+            }
+            .hero-button{
+                padding-left: 50%;
+                padding-bottom: 90%;
+                
+            }
+
+            .feature {
+                width: 120px;
+                height: 120px;
+            }
+
+            .cta h2 {
+
+                font-size: 2rem;
+                margin: 0 0 10px;
+                padding-top: 100%;
+                
+            }
+            
+
+            .cta p {
+                font-size: 1rem;
+                
+            }
+            .cta.signup{
+                margin: 10% 5%;
+                padding: f;
             
             }
         }
@@ -341,8 +464,8 @@
     <header class="header" >
         <img src=" images/777jackiecha.png" alt="">
         <h1>777Jackpot</h1>            
-        <ul class="navlist">  
-            <li><a href="#">Home </a></li>
+        <ul class="navlist"> 
+            <li><a href="index.html ">Home </a></li>
             <li><a href="#"> About</a></li>
             <li><a href="#"> Guide</a></li>
             <li><a href="#">Contact </a></li>
