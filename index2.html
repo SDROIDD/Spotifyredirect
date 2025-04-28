@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>base</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" 
+    href="http://unpkg.com/boxicon@latest/css/boxicon.min.css">
+    <style>
+        /*general style*/
+        body {
+            background: linear-gradient(to right, #4d076d, #ff00d4);
+            width: 100%;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        /*header*/
+        .header img {
+            position: absolute;top: 9%;left: 4%;transform: translate(-50%,-50%) 
+        }
+        .navlist {
+            display: flex;
+            font-family: 'Arial', Helvetica, sans-serif;
+            justify-content: center;
+            list-style: none;
+            position: absolute;top: 9%;left: 50%;transform: translate(-50%,-50%)
+
+        }
+        .navlist a {
+            color: #fcf8f8;
+            margin-left: 60px;
+            font-size: 20px;
+            font-weight: 600;
+            border-bottom: 2px solid transparent;
+            transition: all .55s ease;
+            
+        }
+        .header h1 {
+            position: absolute;top: 7%;left: 13%;transform: translate(-50%,-50%) ; 
+            font-size: 30px; 
+            font-family:' Arial', Helvetica, sans-serif; 
+            font-weight: bold; 
+            color: aliceblue;
+        }
+        .header .login{
+            padding: 10px 20px;
+            background: linear-gradient(to left, #4d076d, #ff00d4);
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+            font-weight: bold;
+            color: #ccc;
+            cursor: pointer;
+            position: absolute;top: 9%; left: 85%;transform: translate(-50%,-50%);
+            font-size: 20px;
+        }
+        .header .sign{
+            padding: 10px 14px;
+            background: linear-gradient(to left, #4d076d, #ff00d4);
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+            font-weight: bold;
+            color: #ccc;
+            cursor: pointer;
+            position: absolute;top: 16%; left: 85%;transform: translate(-50%,-50%);
+            font-size: 20px;
+        }
+        .header .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+        .hero {
+            padding: 50px 20px;
+        }
+        .hero h1 {
+            position: absolute ;top: 31%;left:21.5%;transform:translate(-50%,-50%); 
+            color: #ff00d4; 
+            font-size: 100px; 
+            font-weight:bolder;
+        }
+        .hero p {
+            font-weight: lighter; 
+            font-family: 'Arial', Helvetica, sans-serif; 
+            position: absolute ;top: 44%;left: 19.5%;transform:translate(-50%,-50%); 
+            color: #fcf8fb; 
+            font-size: 90px
+        }
+        .hero-button {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+    
+        }
+        .hero-button .bnt {
+            width: 250px; 
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px; 
+            box-shadow: 0 0 10px #ccc;
+            background: linear-gradient(to left, #4d076d, #ff00d4); 
+            position: absolute ;top: 60%;left: 9.5%;transform:translate(-50%,-50%); 
+            color: #fcf8f8;
+            text-decoration:none;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        .menu{
+            color: #fcf8f8;
+            font-size: 30px;
+            cursor: pointer;
+            font-family:Lucida Sans, 'Lucida Sans Regular';
+            position: absolute;top: 1%; left: 85%;transform: translate(-50%,-50%);
+            display: none;
+        }
+        .hero img {
+            position: absolute;top: 60%;left: 73%;transform: translate(-50%,-50%)
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center the boxes */
+            gap: 20px;
+            padding: 50px 20px;
+            position: absolute;top: 120%;left: 50%;transform: translate(-50%,-50%);
+            align-items: center;
+        }
+
+        .feature {
+            background-color: #4d076d;
+            border: 3px solid #ccc;
+            border-radius: 50%; /* Make the boxes circular */
+            padding: 20px;
+            text-align: center;
+            width: 200px; /* Set width and height to make them circular */
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'arial', Helvetica, sans-serif;
+        }
+
+        .feature h2 {
+            font-size: 1.2rem;
+            color: #ff00d4;
+            margin: 10px 0;
+        }
+
+        .feature p {
+            font-size: 0.9rem;
+            color: #fcf9f9;
+        }
+
+        .feature-title {
+            margin-top: 10px; /* Adds space between the box and the title */
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #4d076d;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .cta {
+            position: absolute;top: 160%;left: 50%;transform: translate(-50%,-50%)
+        }
+        .cta h2 {
+            font-size: 4rem;
+            color: #ff00d4;
+            margin-bottom: 20px;
+            text-align: center;
+            
+        }
+
+        .cta p {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            font-family: 'Arial', Helvetica, sans-serif;
+            color: #fcf8f8;
+            font-weight: bold;
+
+        }
+
+        .cta .signup{
+            padding: 15px 30px;
+            background: linear-gradient(to right, #4d076d, #ff00d4);
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fcf9f9;
+            cursor: pointer;
+            position: absolute;top: 120%;left: 50%;transform: translate(-50%,-50%)
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #c4c5c5;
+            position: absolute;top:190%;left: 50%;transform: translate(-50%,-50%)
+        }
+        /*res*/
+        @media (max-width: 768px) {
+            .header ul {
+                font-size: 1rem;
+            }
+            .login{
+                top: 10%;
+                left:29% ;
+                transform: translate(-50%,-50%);
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.5rem;
+            }
+            .hero-button{
+                margin-right: 30%;
+            }
+
+            .feature {
+                width: 150px;
+                height: 150px;
+            }
+
+            .cta h2 {
+                font-size: 1.5rem;
+            }
+
+            .cta p {
+                font-size: 0.9rem;
+            }
+        }
+        @media (max-width: 480px){
+            .menu{
+                display: block;
+            }
+            .navlist{
+                position: absolute;
+                top: 25%;
+                right: 100%;
+                width: 300px;
+                height: 40vh;
+                background: #631463;
+                display: flex;
+                align-items:center;
+                flex-direction: column;
+                padding: 50px 20px;
+                transition: all .100s ease;
+                z-index: 1;
+                border-radius: 20%;
+                opacity: 0.8;
+                
+                
+            }
+            .navlist .display{
+                display: none;
+            }
+            .navlist a{
+                display: block;
+                margin-left: 0;
+                margin: 20px 0;
+            }
+            .header ul {
+                font-size: 0.5rem;
+            }
+            .header h1 {
+                font-size: 1.5rem;
+                padding-left: 50%;
+            }
+            .header img {
+                padding-left:13%;
+            }
+            .login{
+                position: relative;
+                top: auto;
+                left: auto;
+                margin: 10px auto;
+                transform:translate(-50%,-50%)
+            }
+
+            .hero img {
+                width: 80%;
+                height: auto;
+                padding-right: 50%;
+                padding-top: 10%;
+            }
+            .hero h1 {
+                font-size: 3.5rem;
+                padding-bottom: 45%;
+                padding-left: 20%;
+            }
+
+            .hero p {
+                font-size: 2.5rem;
+                padding-bottom: 43%;
+                padding-left: 22%;
+            }
+            .hero-button{
+                padding-left: 50%;
+                padding-bottom: 90%;
+                
+            }
+
+            .feature {
+                width: 120px;
+                height: 120px;
+            }
+
+            .cta h2 {
+
+                font-size: 1.2rem;
+                margin: 0 0 20px;
+                padding-top: 90%;
+                
+            }
+            
+
+            .cta p {
+                font-size: 0.8rem;
+                
+            }
+            .cta.signup{
+                margin: 40% 10%;
+            
+            }
+        }
+            
+    </style>
+</head>
+<body>
+    <!---header-->
+    <header class="header" >
+        <img src=" images/777jackiecha.png" alt="">
+        <h1>777Jackpot</h1>            
+        <ul class="navlist">  
+            <li><a href="#">Home </a></li>
+            <li><a href="#"> About</a></li>
+            <li><a href="#"> Guide</a></li>
+            <li><a href="#">Contact </a></li>
+            <li><a href="#"> Earn</a></li>
+        </ul>
+        <button style="background: transparent; border: none;"><p  class="menu" >MENU</p></button>
+
+        <button class="login"><a href="log.html">Login</a></button>
+        <button class="sign"><a href="log.html">Signup</a></button>
+        <video autoplay muted loop class="background-video">
+            <source src="videos/falling-coins.mp4 " type="video/mp4">
+        </video>
+    </header>
+    <!--hero-->
+    <section class="hero">
+        <h1>Making Money Is</h1>
+        <p>Even Easier Now</p>
+        <div class="hero-button">
+        </div>
+        <img  src="images/coinstack.png " alt="">
+        <img  src="images/Rrr.png " alt="">
+        <img   src=" images/machineeee.png" alt="">
+    </section>
+    <!--features-->
+    <section class="features">
+        <div class="feature">
+            <h2>Sign Up</h2>
+            <p>Create an account to start earning free bets and rewards.</p>
+        </div>
+        <div class="feature">
+            <h2>Deposit</h2>
+            <p>Deposit funds and earn free bets from PTC ads.</p>
+        </div>
+        <div class="feature">
+            <h2>Bet</h2>
+            <p>Predict number ranges and earn rewards.</p>
+        </div>
+        <div class="feature">
+            <h2>Withdraw</h2>
+            <p>Withdraw your earnings directly to your bank account.</p>
+        </div>
+    </section>
+    <section class="cta">
+        <h2>Get Started</h2>
+        <p>Join 777Jackpot now to earn like never before and enjoy free bets!</p>
+        <button class="signup"><a href="signup.html">Sign Up</a></button>
+    </section>
+
+    <footer class="footer">
+        <p>© Standroid Technologies</p>
+    </footer>
+    <script>
+    // JavaScript for Menu Toggle
+    const menuButton = document.querySelector('.menu');
+    const navList = document.querySelector('.navlist');
+
+    menuButton.addEventListener('click', () => {
+        // Toggle the visibility of the navlist
+        navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
+    });
+</script>
+</body>
+</html>
